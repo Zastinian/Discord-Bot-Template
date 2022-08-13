@@ -1,6 +1,7 @@
 import { Client, Collection, GatewayIntentBits } from "discord.js";
 import * as Types from './types';
 import fs from 'fs';
+import Config from "../config";
 
 class Bot extends Client {
     constructor() {
@@ -16,7 +17,7 @@ class Bot extends Client {
     
     init() {
         this.loads();
-        this.login('token');
+        this.login(Config.token);
     }
 
     loads() {
