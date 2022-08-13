@@ -1,5 +1,5 @@
 export interface Command {
-    name: String;
-    description: String;
+    name: string;
+    description: string;
     run: Function;
 }
