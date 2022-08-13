@@ -2,8 +2,9 @@ export {};
 
 import * as Types from "../types";
 import Discord from "discord.js";
+import Config from "../../config";
 
-const PREFIX = '!' as string;
+const PREFIX = Config.prefix as string;
 
 module.exports = async (
 	client: Discord.Client,
