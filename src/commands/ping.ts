@@ -10,7 +10,7 @@ module.exports = {
 	description: "ping",
 	run: async (message: Discord.Message, client: Discord.Client) => {
 		return message.reply({
-			content: 'Pong!'
+		content: "Pong!",
 		});
 	},
 };

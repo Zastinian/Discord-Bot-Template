@@ -9,3 +9,4 @@ export interface Command {
     description: string;
     run: Function;
 }
+  
