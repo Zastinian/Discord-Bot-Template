@@ -6,7 +6,6 @@
   "scripts": {
     "start": "ts-node index.ts"
   },
-  "keywords": [],
   "author": "Zastinian#8451",
   "license": "ISC",
   "dependencies": {
