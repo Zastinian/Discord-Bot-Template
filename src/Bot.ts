@@ -1,7 +1,7 @@
-import { Client, Collection, GatewayIntentBits } from "discord.js";
-import * as Types from "./types";
-import fs from "fs";
-import Config from "../config";
+import {Client, Collection, GatewayIntentBits} from "discord.js"
+import * as Types from "./types"
+import fs from "fs"
+import Config from "../config"
 
 class Bot extends Client {
   constructor() {
@@ -12,40 +12,40 @@ class Bot extends Client {
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessages,
       ],
-    });
+    })
   }
   init() {
-    this.loads();
-    this.login(Config.token);
+    this.loads()
+    this.login(Config.token)
   }
   loads() {
-    let commands: Collection<string, Types.Command> = new Collection();
+    let commands: Collection<string, Types.Command> = new Collection()
     const commandFiles = fs
       .readdirSync(`${__dirname}\\commands`)
-      .filter((file: string) => file.endsWith(".ts"));
+      .filter((file: string) => file.endsWith(".ts"))
     for (const file of commandFiles) {
-      const command: Types.Command = require(`${__dirname}\\commands\\${file}`);
+      const command: Types.Command = require(`${__dirname}\\commands\\${file}`)
 
-      commands.set(command.name, command);
+      commands.set(command.name, command)
 
-      console.log(`Loaded command '${command.name}'`);
+      console.log(`Loaded command '${command.name}'`)
     }
     fs.readdir(__dirname + "/events/", (err: any, files: string[]) => {
-      if (err) console.log(err);
+      if (err) console.log(err)
 
       files.forEach((file: string) => {
-        if (!file.endsWith(".ts")) return;
+        if (!file.endsWith(".ts")) return
 
-        const evt: Function = require(__dirname + "/events/" + file);
+        const evt: Function = require(__dirname + "/events/" + file)
 
-        let evtName = file.split(".")[0];
+        let evtName = file.split(".")[0]
 
-        console.log(`Loaded event '${evtName}'`);
+        console.log(`Loaded event '${evtName}'`)
 
-        this.on(evtName, evt.bind(null, this, commands));
-      });
-    });
+        this.on(evtName, evt.bind(null, this, commands))
+      })
+    })
   }
 }
 
-export default Bot;
+export default Bot

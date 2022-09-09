@@ -4,7 +4,6 @@
  */
 
 export default {
-    token: "token",
-    prefix: "!",
-};
-  
+  token: "token",
+  prefix: "!",
+}
