@@ -1,6 +1,10 @@
+/* Exporting the module. */
 export {}
+/* Importing the Discord.js library. */
 import Discord from "discord.js"
 /**
+ * @description Exporting the module
+ * @author Zastinian
  * @param {string} name
  * @param {string} description
  * @param {Function} run

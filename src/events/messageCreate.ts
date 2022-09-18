@@ -1,11 +1,25 @@
+/* Exporting the module. */
 export {}
 
+/* It's importing the types, discord.js, and the config file. */
 import * as Types from "../types"
 import Discord from "discord.js"
 import Config from "../../config"
 
-const PREFIX = Config.prefix as string
+/**
+ * @description It's a type assertion. It's telling the compiler that the value of `Config.prefix` is a string.
+ * @type {String} PREFIX
+ * */
+const PREFIX: string = Config.prefix as string
 
+/**
+ * @description It's a function that is called when a message is sent.
+ * @author Zastinian
+ * @param {Discord.Client} client
+ * @param {Discord.Collection<string, Types.Command>} commands
+ * @param {Discord.Message} message
+ */
+/* It's exporting the function. */
 module.exports = async (
   client: Discord.Client,
   commands: Discord.Collection<string, Types.Command>,
