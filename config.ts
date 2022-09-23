@@ -5,6 +5,8 @@
  * @param {string} prefix
  */
 export default {
+  /* It's setting the token to `token`. */
   token: "token",
+  /* It's setting the prefix to `!` */
   prefix: "!",
 }
