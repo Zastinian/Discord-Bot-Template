@@ -1,7 +1,7 @@
 /* Exporting the module. */
-export {}
+export {};
 /* Importing the Discord.js library. */
-import Discord from "discord.js"
+import Discord from "discord.js";
 /**
  * @description Defining the command.
  * @author Zastinian
@@ -20,6 +20,6 @@ module.exports = {
     /* Returning the message.reply function. */
     return message.reply({
       content: "Pong!",
-    })
+    });
   },
-}
+};

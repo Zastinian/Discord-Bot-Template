@@ -9,9 +9,9 @@
  */
 export interface Command {
   /* It's defining a property called `name` that is of type `string`. */
-  name: string
+  name: string;
   /* It's defining a property called `description` that is of type `string`. */
-  description: string
+  description: string;
   /* It's defining a property called `run` that is of type `Function`. */
-  run: Function
+  run: Function;
 }

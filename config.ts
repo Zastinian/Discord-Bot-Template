@@ -9,4 +9,4 @@ export default {
   token: "token",
   /* It's setting the prefix to `!` */
   prefix: "!",
-}
+};

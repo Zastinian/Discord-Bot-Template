@@ -1,14 +1,14 @@
 /* Exporting the module. */
-export {}
+export {};
 /* It's importing the types, discord.js, and the config file. */
-import * as Types from "../types"
-import Discord from "discord.js"
-import Config from "../../config"
+import * as Types from "../types";
+import Discord from "discord.js";
+import Config from "../../config";
 /**
  * @description It's a type assertion. It's telling the compiler that the value of `Config.prefix` is a string.
  * @type {String} PREFIX
  * */
-const PREFIX: string = Config.prefix as string
+const PREFIX: string = Config.prefix as string;
 /**
  * @description It's a function that will run a command if the message starts with the prefix and if the command
  * @author Zastinian
@@ -36,20 +36,20 @@ const messageCreate = async (
 ) => {
   /* It's checking if the message doesn't start with the prefix or if the author of the message is a
   bot. If it is, it will return. */
-  if (!message.content.startsWith(PREFIX) || message.author.bot) return
+  if (!message.content.startsWith(PREFIX) || message.author.bot) return;
   /* It's getting the command from the message. */
-  const command = message.content.toString().slice(PREFIX.length).trim().split(" ").shift()!.toLowerCase()
+  const command = message.content.toString().slice(PREFIX.length).trim().split(" ").shift()!.toLowerCase();
   /* It's checking if the command exists. If it doesn't, it will return. */
-  if (!commands.has(command)) return
+  if (!commands.has(command)) return;
   /* It's catching any errors that may occur when running the command. */
   try {
     /* It's getting the command from the collection and running it. */
-    commands.get(command)!.run(message, client)
+    commands.get(command)!.run(message, client);
   } catch (error) {
     /* It's logging the error to the console. */
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 /* It's exporting the function. */
-module.exports = messageCreate
+module.exports = messageCreate;
